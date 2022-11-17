@@ -22,3 +22,15 @@ const calculator = {
         return i;
     },
 }
+
+function operate(op, num1, num2) {
+    if (op == "+") {
+        return calculator.add(num1, num2);
+    } else if (op == "-") {
+        return calculator.subtract(num1, num2);
+    } else if (op == "*") {
+        return calculator.multiply(num1, num2);
+    } else if (op == "/") {
+        return calculator.divide(num1, num2);
+    }
+}
