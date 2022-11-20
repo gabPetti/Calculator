@@ -67,11 +67,11 @@ function operate() {
         displayNum2.innerHTML = "";
     }
 
-    if (displayNum1.innerHTML == "NaN") {
+    if (displayNum1.innerHTML == "NaN" || displayNum1.innerHTML == "Infinity") {
         document.querySelectorAll("button").forEach((item) => {
-            item.classList.toggle("nan")
+            item.classList.toggle("undefined")
         })
-        document.querySelector("#tools button:nth-child(2)").classList.toggle("nan")
+        document.querySelector("#tools button:nth-child(1)").classList.toggle("undefined")
     }
 }
 
@@ -117,7 +117,21 @@ function displayOperation(op) {
     }
 }
 
+function percentage() {
+    if (displayOp.innerHTML == "") {
+        displayNum1.innerHTML = calculator.multiply(Number(displayNum1.innerHTML), 0.01)
+    } else {
+        displayNum1.innerHTML = calculator.multiply(0.01, Number(displayNum2.innerHTML))
+    }
+}
+
 function clearDisplay() {
+    if (displayNum1.innerHTML == "NaN" || displayNum1.innerHTML == "Infinity") {
+        document.querySelectorAll("button").forEach((item) => {
+            item.classList.toggle("undefined")
+        })
+        document.querySelector("#tools button:nth-child(1)").classList.toggle("undefined")
+    }
     displayNum1.innerHTML = "";
     displayOp.innerHTML = "";
     displayNum2.innerHTML = "";

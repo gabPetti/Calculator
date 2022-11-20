@@ -1,0 +1,98 @@
+$base-color: #FBF4E7;
+$base-border: #33342F;
+$bg-color: #FFE0E0;
+$bg-deco: #F3D1EA;
+$secondary: #efdfbf;
+
+@font-face {
+    font-family: 'Calculator';
+    src: url(../fonts/Calculator.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
+}
+
+#content {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(../images/background.png);
+    background-size: cover;
+}
+
+button {
+    width: 70px;
+    height: 70px;
+
+    margin: 4px;
+    border: 3px solid $base-border;
+
+    font-size: 20px;
+    background-color: transparent;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+button.undefined {
+    pointer-events: none;
+    background-color: rgba(30, 30, 30, 0.1) !important;
+}
+
+#calculator {
+    border: 3px solid $base-border;
+    border-radius: 9px;
+    padding: 12px;
+    box-shadow: 8px 8px 0 $base-border;
+    background-color: $base-color;
+
+    #display {
+        height: 80px;
+
+        display: flex;
+        align-items: center;
+
+        margin-bottom: 12px;
+        margin-left: 4px;
+        border: 3px solid $base-border;
+        border-radius: 9px;
+        padding: 8px;
+
+        overflow-x: hidden;
+        font-size: 10px;
+    }
+
+    #tools {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+
+        button {
+            background-color: $secondary;
+        }
+    }
+
+    div {
+        display: flex;
+
+        #numbers {
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+
+        #operations {
+            display: grid;
+            grid-template-columns: auto;
+
+            button {
+                background-color: $bg-color;
+            }
+        }
+    }
+}

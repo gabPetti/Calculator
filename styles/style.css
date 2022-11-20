@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "Calculator";
+  src: url(../fonts/Calculator.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Code", monospace;
+}
+
+#content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../images/background.png);
+  background-size: cover;
+}
+
+button {
+  width: 70px;
+  height: 70px;
+  margin: 4px;
+  border: 3px solid #33342F;
+  font-size: 20px;
+  background-color: transparent;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+button.undefined {
+  pointer-events: none;
+  background-color: rgba(30, 30, 30, 0.1) !important;
+}
+
+#calculator {
+  border: 3px solid #33342F;
+  border-radius: 9px;
+  padding: 12px;
+  box-shadow: 8px 8px 0 #33342F;
+  background-color: #FBF4E7;
+}
+#calculator #display {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  margin-left: 4px;
+  border: 3px solid #33342F;
+  border-radius: 9px;
+  padding: 8px;
+  overflow-x: hidden;
+  font-size: 10px;
+}
+#calculator #tools {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+#calculator #tools button {
+  background-color: #efdfbf;
+}
+#calculator div {
+  display: flex;
+}
+#calculator div #numbers {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+#calculator div #operations {
+  display: grid;
+  grid-template-columns: auto;
+}
+#calculator div #operations button {
+  background-color: #FFE0E0;
+}/*# sourceMappingURL=style.css.map */
