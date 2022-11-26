@@ -33,7 +33,6 @@ function calculateThis(event) {
 }
 
 function operate() {
-    let displayh1 = document.querySelector("#display h1").innerHTML
     let num1 = Number(displayNum1.innerHTML);
     let num2 = Number(displayNum2.innerHTML);
     
@@ -170,3 +169,22 @@ function deleteNum() {
         showDisplay.innerHTML = "";
     }
 }
+
+document.addEventListener("keydown", (event) => {
+    if ("0123456789".includes(event.key)) {
+        displayNum(event.key)
+    } else if (",.".includes(event.key)) {
+        displayFloatPoint()
+    } else if ("+-*/".includes(event.key)) {
+        event.preventDefault()
+        displayOperation(event.key)
+    } else if (event.key == "Backspace") {
+        deleteNum()
+    } else if (event.key == "Enter") {
+        operate()
+    } else if (event.key == "c") {
+        clearDisplay()
+    } else if (event.key == "%") {
+        percentage()
+    }
+})

@@ -9,4 +9,5 @@ This calculator was based on [Odin Project's](https://www.theodinproject.com) Fo
 - A Del button to delete some misclicked numbers or operations
 - A C button to clear the calculator display
 - Button to calculate percentage
+- Keyboard support
 - Retro design
