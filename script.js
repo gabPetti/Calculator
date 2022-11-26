@@ -22,7 +22,7 @@ const calculator = {
         return i;
     },
 }
-
+var showDisplay = document.querySelector("#display h2")
 var displayNum1 = document.querySelector("#display-num-1");
 var displayOp = document.querySelector("#display-op");
 var displayNum2 = document.querySelector("#display-num-2");
@@ -33,6 +33,7 @@ function calculateThis(event) {
 }
 
 function operate() {
+    let displayh1 = document.querySelector("#display h1").innerHTML
     let num1 = Number(displayNum1.innerHTML);
     let num2 = Number(displayNum2.innerHTML);
     
@@ -51,6 +52,7 @@ function operate() {
             displayNum1.innerHTML = calculator.divide(num1, num1)
         }
 
+        showDisplay.innerHTML = `<span>${num1}</span><span>${displayOp.innerHTML}</span><span>${num1}</span><span>=</span>`;
         displayOp.innerHTML = "";
     } else if (!(displayNum2 == "")) {
         if (displayOp.innerHTML == "+") {
@@ -63,6 +65,7 @@ function operate() {
             displayNum1.innerHTML = calculator.divide(num1, num2)
         }
 
+        showDisplay.innerHTML = `<span>${num1}</span><span>${displayOp.innerHTML}</span><span>${num2}</span><span>=</span>`;
         displayOp.innerHTML = "";
         displayNum2.innerHTML = "";
     }
@@ -105,6 +108,22 @@ function displayFloatPoint() {
     }
 }
 
+function displaySignal() {
+    if (displayOp.innerHTML == "") {
+        if (displayNum1.innerHTML != "" && displayNum1.innerHTML[0] != "-") {
+            displayNum1.innerHTML = "-" + displayNum1.innerHTML;
+        } else {
+            displayNum1.innerHTML = displayNum1.innerHTML.slice(1);
+        }
+    } else if (!(displayNum2 == "")) {
+        if (displayNum2.innerHTML != "" && displayNum2.innerHTML[0] != "-") {
+            displayNum2.innerHTML = "-" + displayNum2.innerHTML;
+        } else {
+            displayNum2.innerHTML = displayNum2.innerHTML.slice(1);
+        }
+    }
+}
+
 function displayOperation(op) {
     if (displayOp.innerHTML == "") {
         if (displayNum1.innerHTML == "") {
@@ -135,6 +154,7 @@ function clearDisplay() {
     displayNum1.innerHTML = "";
     displayOp.innerHTML = "";
     displayNum2.innerHTML = "";
+    showDisplay.innerHTML = "";
 }
 
 function deleteNum() {
@@ -144,5 +164,9 @@ function deleteNum() {
         displayOp.innerHTML = displayNum2.innerHTML.slice(0, -1);
     } else if (!(displayNum2 == "")) {
         displayNum2.innerHTML = displayNum2.innerHTML.slice(0, -1);
+    }
+
+    if (showDisplay.innerHTML != "") {
+        showDisplay.innerHTML = "";
     }
 }

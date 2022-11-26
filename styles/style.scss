@@ -14,6 +14,14 @@ $secondary: #efdfbf;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Fira Code', monospace;
+    font-weight: 400;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+*::-webkit-scrollbar {
+    display: none;
 }
 
 #content {
@@ -53,20 +61,36 @@ button.undefined {
     box-shadow: 8px 8px 0 $base-border;
     background-color: $base-color;
 
+    span {
+        margin-right: 10px;
+    }
+
     #display {
-        width: 100%;
-        height: 80px;
-
-        display: flex;
-        align-items: center;
-
         margin-bottom: 12px;
         border: 3px solid $base-border;
         border-radius: 9px;
         padding: 8px;
 
-        overflow: scroll;
-        font-size: 10px;
+        
+
+
+        h1 {
+            line-height: 0;
+            display: flex;
+            align-items: center;
+            font-size: 40px;
+            height: 50px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: gray;
+            height: 20px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
     }
 
     #tools {
@@ -75,11 +99,12 @@ button.undefined {
         margin-bottom: 5px;
 
         button {
+            font-size: 25px;
             background-color: $secondary;
         }
     }
 
-    div {
+    #buttons {
         display: flex;
 
         #numbers {
@@ -87,6 +112,10 @@ button.undefined {
             display: grid;
             grid-template-columns: auto auto auto;
             row-gap: 5px;
+
+            button {
+                font-size: 30px;
+            }
         }
 
         #operations {
@@ -95,6 +124,7 @@ button.undefined {
             row-gap: 5px;
 
             button {
+                font-size: 25px;
                 background-color: $bg-color;
             }
         }

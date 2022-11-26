@@ -7,6 +7,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Fira Code", monospace;
+  font-weight: 400;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 
 #content {
@@ -42,17 +49,30 @@ button.undefined {
   box-shadow: 8px 8px 0 #33342F;
   background-color: #FBF4E7;
 }
+#calculator span {
+  margin-right: 10px;
+}
 #calculator #display {
-  width: 100%;
-  height: 80px;
-  display: flex;
-  align-items: center;
   margin-bottom: 12px;
   border: 3px solid #33342F;
   border-radius: 9px;
   padding: 8px;
-  overflow: scroll;
-  font-size: 10px;
+}
+#calculator #display h1 {
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  height: 50px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+#calculator #display h2 {
+  font-size: 18px;
+  color: gray;
+  height: 20px;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 #calculator #tools {
   display: flex;
@@ -60,22 +80,27 @@ button.undefined {
   margin-bottom: 5px;
 }
 #calculator #tools button {
+  font-size: 25px;
   background-color: #efdfbf;
 }
-#calculator div {
+#calculator #buttons {
   display: flex;
 }
-#calculator div #numbers {
+#calculator #buttons #numbers {
   width: 100%;
   display: grid;
   grid-template-columns: auto auto auto;
   row-gap: 5px;
 }
-#calculator div #operations {
+#calculator #buttons #numbers button {
+  font-size: 30px;
+}
+#calculator #buttons #operations {
   display: grid;
   grid-template-columns: auto;
   row-gap: 5px;
 }
-#calculator div #operations button {
+#calculator #buttons #operations button {
+  font-size: 25px;
   background-color: #FFE0E0;
 }/*# sourceMappingURL=style.css.map */

@@ -10,12 +10,13 @@
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <div id="content">
         <div id="calculator">
             <div id="display">
+                <h2></h2>
                 <h1>
                     <span id="display-num-1"></span>
                     <span id="display-op"></span>
@@ -28,7 +29,7 @@
                 <button onclick="percentage()">%</button>
                 <button onclick="operate()" id="operate">=</button>
             </div>
-            <div>
+            <div id="buttons">
                 <div id="numbers">
                     <button onclick="displayNum('9')">9</button>
                     <button onclick="displayNum('8')">8</button>
@@ -39,7 +40,7 @@
                     <button onclick="displayNum('3')">3</button>
                     <button onclick="displayNum('2')">2</button>
                     <button onclick="displayNum('1')">1</button>
-                    <button>N</button>
+                    <button onclick="displaySignal()">±</button>
                     <button onclick="displayNum('0')">0</button>
                     <button onclick="displayFloatPoint()">.</button>
                 </div>
